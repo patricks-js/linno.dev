@@ -1,3 +1,4 @@
+import { ChevronDownIcon } from "lucide-react";
 import Link from "next/link";
 import { GitHubIcon } from "@/components/icons/github";
 import { LinkedInIcon } from "@/components/icons/linkedin";
@@ -64,6 +65,31 @@ export default function Home() {
           no backend, sempre buscando soluções que façam sentido técnico e
           entregam valor ao negócio.
         </p>
+      </section>
+      <section className="space-y-8">
+        <h2 className="text-xl font-serif leading-relaxed">
+          Experiencia profissional
+        </h2>
+        <ul className="px-4">
+          <li>
+            <header className="flex items-center justify-between">
+              <div className="space-y-1">
+                <h3 className="text-lg font-medium leading-relaxed">
+                  In8 Solutions
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Desenvolvedor Full Stack
+                </p>
+              </div>
+              <div className="flex items-center gap-6">
+                <p>Julho 2022 • Atual</p>
+                <Button variant="ghost" size="icon">
+                  <ChevronDownIcon />
+                </Button>
+              </div>
+            </header>
+          </li>
+        </ul>
       </section>
     </main>
   );
