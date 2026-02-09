@@ -3,6 +3,12 @@ import Link from "next/link";
 import { GitHubIcon } from "@/components/icons/github";
 import { ProjectTags } from "@/components/projects/project-tags";
 import type { Project } from "@/data/projects";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 type ProjectDetailHeaderProps = {
   project: Project;
@@ -15,14 +21,32 @@ export function ProjectDetailHeader({ project }: ProjectDetailHeaderProps) {
   return (
     <section className="relative">
       <div className="space-y-5 px-6">
-        <div className="flex items-center gap-2">
-          <Link href="/projects" className={actionClass} aria-label="Voltar">
-            <ArrowLeftIcon className="size-4" />
-          </Link>
-          <Link href="/" className={actionClass} aria-label="Home">
-            <HomeIcon className="size-4" />
-          </Link>
-        </div>
+        <TooltipProvider>
+          <div className="flex items-center gap-2">
+            <Tooltip>
+              <TooltipTrigger
+                render={
+                  <Link href="/projects" className={actionClass} aria-label="Voltar">
+                    <ArrowLeftIcon className="size-4" />
+                  </Link>
+                }
+                nativeButton={false}
+              />
+              <TooltipContent>Voltar para projects</TooltipContent>
+            </Tooltip>
+            <Tooltip>
+              <TooltipTrigger
+                render={
+                  <Link href="/" className={actionClass} aria-label="Home">
+                    <HomeIcon className="size-4" />
+                  </Link>
+                }
+                nativeButton={false}
+              />
+              <TooltipContent>Voltar para home</TooltipContent>
+            </Tooltip>
+          </div>
+        </TooltipProvider>
         <div className="flex flex-wrap items-start justify-between gap-6">
           <div className="space-y-3">
             <h1 className="text-3xl font-medium">{project.title}</h1>

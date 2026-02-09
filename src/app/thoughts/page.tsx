@@ -4,6 +4,12 @@ import { HomeButton } from "@/components/home-button";
 import { Footer } from "@/components/layout/footer";
 import { SectionTitle } from "@/components/section-title";
 import { ThoughtsList } from "@/components/thoughts/thoughts-list";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { thoughts } from "@/data/thoughts";
 
 export const metadata: Metadata = {
@@ -16,7 +22,12 @@ export default function ThoughtsPage() {
     <main className="max-w-4xl mx-auto pt-20 pb-10 border-x border-border/60 space-y-10">
       <section className="relative">
         <div className="space-y-3 px-6">
-          <HomeButton />
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger render={<HomeButton />} />
+              <TooltipContent>Voltar para home</TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
           <SectionTitle className="text-3xl italic">Thoughts</SectionTitle>
           <p className="text-sm text-muted-foreground">
             Notas rápidas, ideias e aprendizados recentes.

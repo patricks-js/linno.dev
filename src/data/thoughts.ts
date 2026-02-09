@@ -2,6 +2,7 @@ export type Thought = {
   slug: string;
   title: string;
   date: string;
+  tags: string[];
   excerpt: string;
   content: string[];
 };
@@ -11,6 +12,7 @@ export const thoughts: Thought[] = [
     slug: "como-escolho-problemas",
     title: "Como escolho problemas, resolvo e termino entregando resultado",
     date: "12 Jan 2024",
+    tags: ["Produtividade", "Processo", "Engenharia"],
     excerpt:
       "Um framework simples para priorizar problemas e chegar em entregas consistentes.",
     content: [
@@ -24,6 +26,7 @@ export const thoughts: Thought[] = [
     title:
       "Como fazer SSH no seu servidor (do jeito certo): guia para iniciantes",
     date: "29 Nov 2023",
+    tags: ["Infra", "Segurança", "DevOps"],
     excerpt:
       "Boas práticas para acesso seguro, chaves e hardening básico em servidores.",
     content: [
@@ -36,6 +39,7 @@ export const thoughts: Thought[] = [
     slug: "o-que-e-rag",
     title: "O que é RAG? Por que você deveria aprender isso?",
     date: "03 Out 2023",
+    tags: ["IA", "RAG", "Produto"],
     excerpt:
       "RAG melhora qualidade de respostas conectando LLMs a fontes confiáveis.",
     content: [

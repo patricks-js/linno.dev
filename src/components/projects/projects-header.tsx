@@ -1,11 +1,22 @@
 import { HomeButton } from "@/components/home-button";
 import { SectionTitle } from "@/components/section-title";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 export function ProjectsHeader() {
   return (
     <section className="relative">
       <div className="space-y-3 px-6">
-        <HomeButton />
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger render={<HomeButton />} nativeButton={false} />
+            <TooltipContent>Voltar para home</TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
         <SectionTitle className="text-3xl italic">proof of work</SectionTitle>
         <p className="text-sm text-muted-foreground">
           Uma vitrine com meus trabalhos e projetos paralelos.

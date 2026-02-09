@@ -9,6 +9,7 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { cn } from "@/lib/utils";
 
 type Experience = {
   company: string;
@@ -65,16 +66,16 @@ export function ExperienceSection() {
                     </p>
                     <TooltipProvider>
                       <CollapsibleTrigger
-                        className={
+                        className={cn(
                           buttonVariants({
                             variant: "ghost",
                             size: "icon",
-                          }) +
-                          " transition-transform duration-200 data-[state=open]:[&_svg]:rotate-180"
-                        }
+                          }),
+                          "group transition-transform duration-200",
+                        )}
                         aria-label="Mostrar descrição do cargo"
                       >
-                        <ChevronDownIcon className="transition-transform duration-200" />
+                        <ChevronDownIcon className="transition-transform duration-200 group-data-[state=open]:rotate-180" />
                       </CollapsibleTrigger>
                     </TooltipProvider>
                   </div>
