@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { GitHubIcon } from "@/components/icons/github";
 import { LinkedInIcon } from "@/components/icons/linkedin";
@@ -41,7 +42,13 @@ export function HeroSection() {
   return (
     <section>
       <div className="space-y-6 px-6">
-        <div className="rounded-full size-28 bg-secondary" />
+        <Image
+          src="/pfp.jpg"
+          alt="Patrick Silva"
+          width={112}
+          height={112}
+          className="rounded-full size-28 bg-secondary object-cover"
+        />
         <div className="flex items-center justify-between">
           <div>
             <h1 className="italic font-medium leading-relaxed font-serif text-4xl">
