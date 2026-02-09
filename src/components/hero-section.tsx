@@ -61,7 +61,7 @@ export function HeroSection() {
           alt="Patrick Silva"
           width={112}
           height={112}
-          className="rounded-full size-28 bg-secondary object-cover"
+          className="rounded-full border drop-shadow-none size-28 bg-secondary object-cover mb-2"
         />
         <div className="flex items-center justify-between">
           <div>
@@ -86,7 +86,6 @@ export function HeroSection() {
                         render={<Link href={link.href} target="_blank" />}
                         variant="outline"
                         size="icon"
-                        className="rounded-full"
                         aria-label={link.label}
                       >
                         <Icon />
@@ -103,7 +102,6 @@ export function HeroSection() {
                     onClick={() => setTheme(isDark ? "light" : "dark")}
                     variant="outline"
                     size="icon"
-                    className="rounded-full"
                     aria-label="Trocar tema"
                   >
                     {isDark ? <SunIcon /> : <MoonIcon />}

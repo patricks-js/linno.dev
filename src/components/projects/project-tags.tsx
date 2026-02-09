@@ -9,9 +9,7 @@ export function ProjectTags({ tags }: ProjectTagsProps) {
     <ul className="flex flex-wrap gap-2">
       {tags.map((tag) => (
         <li key={tag}>
-          <Badge variant="outline" size="sm">
-            {tag}
-          </Badge>
+          <Badge variant="outline">{tag}</Badge>
         </li>
       ))}
     </ul>
