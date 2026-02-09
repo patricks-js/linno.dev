@@ -13,7 +13,7 @@ export function ProjectsHeader() {
       <div className="space-y-3 px-6">
         <TooltipProvider>
           <Tooltip>
-            <TooltipTrigger render={<HomeButton />} nativeButton={false} />
+            <TooltipTrigger render={<HomeButton />} />
             <TooltipContent>Voltar para home</TooltipContent>
           </Tooltip>
         </TooltipProvider>

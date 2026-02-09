@@ -1,10 +1,10 @@
 "use client";
 
+import { MoonIcon, SunIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { MoonIcon, SunIcon } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
 import { useTheme } from "next-themes";
+import { useEffect, useMemo, useState } from "react";
 import { GitHubIcon } from "@/components/icons/github";
 import { LinkedInIcon } from "@/components/icons/linkedin";
 import { TwitterIcon } from "@/components/icons/twitter";

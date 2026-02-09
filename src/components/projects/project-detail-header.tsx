@@ -2,13 +2,13 @@ import { ArrowLeftIcon, ArrowUpRightIcon, HomeIcon } from "lucide-react";
 import Link from "next/link";
 import { GitHubIcon } from "@/components/icons/github";
 import { ProjectTags } from "@/components/projects/project-tags";
-import type { Project } from "@/data/projects";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import type { Project } from "@/data/projects";
 
 type ProjectDetailHeaderProps = {
   project: Project;
@@ -26,11 +26,14 @@ export function ProjectDetailHeader({ project }: ProjectDetailHeaderProps) {
             <Tooltip>
               <TooltipTrigger
                 render={
-                  <Link href="/projects" className={actionClass} aria-label="Voltar">
+                  <Link
+                    href="/projects"
+                    className={actionClass}
+                    aria-label="Voltar"
+                  >
                     <ArrowLeftIcon className="size-4" />
                   </Link>
                 }
-                nativeButton={false}
               />
               <TooltipContent>Voltar para projects</TooltipContent>
             </Tooltip>
@@ -41,7 +44,6 @@ export function ProjectDetailHeader({ project }: ProjectDetailHeaderProps) {
                     <HomeIcon className="size-4" />
                   </Link>
                 }
-                nativeButton={false}
               />
               <TooltipContent>Voltar para home</TooltipContent>
             </Tooltip>

@@ -50,7 +50,7 @@ export default async function ThoughtPage({ params }: ThoughtPageProps) {
     "inline-flex size-9 items-center justify-center rounded-full border border-border/60 bg-card/30 text-foreground/80 transition-colors hover:text-foreground";
 
   return (
-    <main className="max-w-4xl mx-auto pt-20 pb-10 border-x border-border/60 space-y-10">
+    <main className="max-w-4xl min-h-svh mx-auto pt-20 pb-10 border-x border-border/60 flex flex-col gap-10">
       <section className="relative">
         <div className="space-y-4 px-6">
           <TooltipProvider>
@@ -86,7 +86,7 @@ export default async function ThoughtPage({ params }: ThoughtPageProps) {
         <div className="pointer-events-none absolute bottom-0 left-0 size-6 bg-background" />
       </section>
       <DiagonalPattern />
-      <section className="relative">
+      <section className="relative flex-1">
         <div className="space-y-4 px-6 text-sm text-muted-foreground">
           {thought.content.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>

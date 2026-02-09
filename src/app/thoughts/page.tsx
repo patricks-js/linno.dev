@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 export default function ThoughtsPage() {
   return (
-    <main className="max-w-4xl mx-auto pt-20 pb-10 border-x border-border/60 space-y-10">
+    <main className="max-w-4xl mx-auto min-h-svh pt-20 pb-10 border-x border-border/60 flex flex-col gap-10">
       <section className="relative">
         <div className="space-y-3 px-6">
           <TooltipProvider>
@@ -36,7 +36,7 @@ export default function ThoughtsPage() {
         <div className="pointer-events-none absolute bottom-0 left-0 size-6 bg-background" />
       </section>
       <DiagonalPattern />
-      <section className="relative">
+      <section className="relative flex-1">
         <div className="px-6">
           <ThoughtsList items={thoughts} />
         </div>

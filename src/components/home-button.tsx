@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { HomeIcon } from "lucide-react";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 type HomeButtonProps = {
