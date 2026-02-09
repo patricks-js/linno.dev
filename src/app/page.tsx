@@ -1,75 +1,18 @@
-import Link from "next/link";
+import { DiagonalPattern } from "@/components/diagonal-pattern";
 import { ExperienceSection } from "@/components/experience-section";
-import { GitHubIcon } from "@/components/icons/github";
-import { LinkedInIcon } from "@/components/icons/linkedin";
-import { TwitterIcon } from "@/components/icons/twitter";
+import { HeroSection } from "@/components/hero-section";
 import { Footer } from "@/components/layout/footer";
 import { StackSection } from "@/components/stack-section";
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
   return (
-    <main className="max-w-4xl mx-auto space-y-12">
-      <section>
-        <div className="rounded-full size-28 bg-secondary" />
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="italic font-medium leading-relaxed font-serif text-4xl">
-              Patrick Silva
-            </h1>
-            <p className="text-sm text-muted-foreground">
-              22 • brasileiro • desenvolvedor de software
-            </p>
-          </div>
-          <div className="flex items-center gap-3">
-            <Button
-              render={
-                <Link href="https://github.com/patricks-js" target="_blank" />
-              }
-              variant="outline"
-              size="icon"
-              className="rounded-full"
-            >
-              <GitHubIcon />
-            </Button>
-            <Button
-              render={
-                <Link
-                  href="https://www.linkedin.com/in/patrick-lsilva/"
-                  target="_blank"
-                />
-              }
-              variant="outline"
-              size="icon"
-              className="rounded-full"
-            >
-              <LinkedInIcon />
-            </Button>
-            <Button
-              render={<Link href="https://x.com/pattricx" target="_blank" />}
-              variant="outline"
-              size="icon"
-              className="rounded-full"
-            >
-              <TwitterIcon />
-            </Button>
-            {/* <Button variant="secondary">X</Button> // TODO: Change theme */}
-            {/* <Button variant="secondary">X</Button> // TODO: Change language */}
-          </div>
-        </div>
-        <Separator className="my-8 opacity-60" />
-        <p className="text-lg">
-          <strong>Sou desenvolvedor de software</strong>. Gosto de construir
-          aplicações completas, do frontend ao backend, com foco em código
-          limpo, escalabilidade e boa experiência para quem usa. Trabalho
-          principalmente com TypeScript, usando React/Next.js no frontend e Bun
-          no backend, sempre buscando soluções que façam sentido técnico e
-          entregam valor ao negócio.
-        </p>
-      </section>
+    <main className="max-w-4xl mx-auto pt-20 pb-10 border-x border-border/60 space-y-10">
+      <HeroSection />
+      <DiagonalPattern />
       <ExperienceSection />
+      <DiagonalPattern />
       <StackSection />
+      <DiagonalPattern />
       <Footer />
     </main>
   );

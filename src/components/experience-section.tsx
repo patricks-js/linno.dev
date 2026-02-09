@@ -1,6 +1,7 @@
 "use client";
 
 import { ChevronDownIcon } from "lucide-react";
+import { SectionTitle } from "@/components/section-title";
 import { buttonVariants } from "@/components/ui/button";
 import {
   Collapsible,
@@ -42,49 +43,49 @@ const experiences: Experience[] = [
 
 export function ExperienceSection() {
   return (
-    <section className="space-y-8">
-      <h2 className="text-xl font-serif leading-relaxed">
-        Experiência Profissional
-      </h2>
-      <ul className="space-y-6">
-        {experiences.map((experience) => (
-          <li key={experience.company}>
-            <Collapsible>
-              <header className="flex items-center justify-between">
-                <div className="space-y-1">
-                  <h3 className="text-lg font-medium leading-relaxed">
-                    {experience.company}
-                  </h3>
-                  <p className="font-medium text-muted-foreground">
-                    {experience.role}
-                  </p>
-                </div>
-                <div className="flex items-center gap-6">
-                  <p className="text-muted-foreground">{experience.period}</p>
-                  <TooltipProvider>
-                    <CollapsibleTrigger
-                      className={buttonVariants({
-                        variant: "ghost",
-                        size: "icon",
-                      })}
-                      aria-label="Mostrar descrição do cargo"
-                    >
-                      <ChevronDownIcon />
-                    </CollapsibleTrigger>
-                  </TooltipProvider>
-                </div>
-              </header>
-              <CollapsiblePanel className="pl-4 pt-4 border-t mt-4">
-                <ul className="list-disc space-y-2 pl-5 text-muted-foreground marker:text-primary">
-                  {experience.highlights.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </CollapsiblePanel>
-            </Collapsible>
-          </li>
-        ))}
-      </ul>
+    <section>
+      <div className="space-y-8 px-6">
+        <SectionTitle>Experiência Profissional</SectionTitle>
+        <ul className="space-y-6">
+          {experiences.map((experience) => (
+            <li key={experience.company}>
+              <Collapsible>
+                <header className="flex items-center justify-between">
+                  <div className="space-y-1">
+                    <h3 className="text-lg font-medium leading-relaxed">
+                      {experience.company}
+                    </h3>
+                    <p className="font-medium text-muted-foreground">
+                      {experience.role}
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-6">
+                    <p className="text-muted-foreground">{experience.period}</p>
+                    <TooltipProvider>
+                      <CollapsibleTrigger
+                        className={buttonVariants({
+                          variant: "ghost",
+                          size: "icon",
+                        })}
+                        aria-label="Mostrar descrição do cargo"
+                      >
+                        <ChevronDownIcon />
+                      </CollapsibleTrigger>
+                    </TooltipProvider>
+                  </div>
+                </header>
+                <CollapsiblePanel className="pl-4 pt-4 border-t mt-4">
+                  <ul className="list-disc space-y-2 pl-5 text-muted-foreground marker:text-primary">
+                    {experience.highlights.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </CollapsiblePanel>
+              </Collapsible>
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
   );
 }

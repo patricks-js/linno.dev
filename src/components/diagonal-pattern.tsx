@@ -1,26 +1,22 @@
-"use client";
+import { cn } from "@/lib/utils";
 
 interface DiagonalPatternProps {
-  side: "left" | "right";
   className?: string;
-  topOffset?: string;
 }
 
-export function DiagonalPattern({
-  side,
-  className = "",
-  topOffset = "0",
-}: DiagonalPatternProps) {
+export function DiagonalPattern({ className }: DiagonalPatternProps) {
   return (
     <div
-      className={`absolute ${side}-0 w-[60px] h-full overflow-hidden sm:block hidden ${className}`}
-      style={{ top: topOffset }}
+      className={cn(
+        "relative h-10 w-full overflow-hidden border-y border-border/60 text-foreground/25 dark:text-foreground/30",
+        className,
+      )}
     >
       <div
-        className="absolute dark:opacity-[0.04] opacity-[0.06] inset-0 w-[60px] h-full border dark:border-[#eee] border-[#000]/70"
+        className="absolute inset-0 z-0 dark:opacity-[0.14] opacity-[0.2]"
         style={{
           backgroundImage:
-            "repeating-linear-gradient(-45deg, transparent, transparent 2px, currentcolor 2px, currentcolor 3px, transparent 3px, transparent 6px)",
+            "repeating-linear-gradient(135deg, transparent, transparent 6px, currentcolor 6px, currentcolor 7px, transparent 7px, transparent 12px)",
         }}
       />
     </div>

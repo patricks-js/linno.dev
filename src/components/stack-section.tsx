@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useEffect, useMemo, useState } from "react";
+import { SectionTitle } from "@/components/section-title";
 import { Marquee } from "@/components/ui/marquee";
 
 type TechStackItem = {
@@ -73,33 +74,36 @@ export function StackSection() {
   }, [mounted, resolvedTheme]);
 
   return (
-    <section className="space-y-6">
-      <div className="space-y-2">
-        <h2 className="text-xl font-serif leading-relaxed">Minha Stack</h2>
-        <p className="text-sm text-muted-foreground">
-          Tecnologias que uso para criar produtos que resolvem problemas reais.
-        </p>
-      </div>
-      <div className="relative">
-        <Marquee pauseOnHover className="[--duration:20s] [--gap:2.5rem] p-2">
-          {techStack.map((item) => (
-            <div
-              key={item.name}
-              className="flex flex-col items-center gap-2 p-2 opacity-60 transition duration-200 group/stack hover:scale-105 hover:opacity-90"
-            >
-              <Image
-                src={getIconSrc(item, isDark)}
-                alt={item.name}
-                width={40}
-                height={40}
-                className="size-10 grayscale transition duration-200 group-hover/stack:grayscale-0"
-              />
-              <span className="text-sm">{item.name}</span>
-            </div>
-          ))}
-        </Marquee>
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-linear-to-r from-background to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-linear-to-l from-background to-transparent" />
+    <section>
+      <div className="space-y-6 px-6">
+        <div className="space-y-2">
+          <SectionTitle>Minha Stack</SectionTitle>
+          <p className="text-sm text-muted-foreground">
+            Tecnologias que uso para criar produtos que resolvem problemas
+            reais.
+          </p>
+        </div>
+        <div className="relative">
+          <Marquee pauseOnHover className="[--duration:20s] [--gap:2.5rem] p-2">
+            {techStack.map((item) => (
+              <div
+                key={item.name}
+                className="flex flex-col items-center gap-2 p-2 opacity-60 transition duration-200 group/stack hover:scale-105 hover:opacity-90"
+              >
+                <Image
+                  src={getIconSrc(item, isDark)}
+                  alt={item.name}
+                  width={40}
+                  height={40}
+                  className="size-10 grayscale transition duration-200 group-hover/stack:grayscale-0"
+                />
+                <span className="text-sm">{item.name}</span>
+              </div>
+            ))}
+          </Marquee>
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-linear-to-r from-background to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-linear-to-l from-background to-transparent" />
+        </div>
       </div>
     </section>
   );
