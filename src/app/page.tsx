@@ -3,6 +3,7 @@ import Link from "next/link";
 import { GitHubIcon } from "@/components/icons/github";
 import { LinkedInIcon } from "@/components/icons/linkedin";
 import { TwitterIcon } from "@/components/icons/twitter";
+import { StackSection } from "@/components/stack-section";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
@@ -91,6 +92,7 @@ export default function Home() {
           </li>
         </ul>
       </section>
+      <StackSection />
     </main>
   );
 }

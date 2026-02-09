@@ -1,5 +1,23 @@
 import type { Metadata } from "next";
+import { Hanken_Grotesk, Instrument_Serif } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
+import { cn } from "@/lib/utils";
+
+const hkGrotesk = Hanken_Grotesk({
+  weight: ["400"],
+  style: "normal",
+  subsets: ["latin"],
+  variable: "--font-hk-grotesk",
+  display: "swap",
+});
+
+const instrumentSerif = Instrument_Serif({
+  weight: ["400"],
+  style: "normal",
+  subsets: ["latin"],
+  variable: "--font-instrument-serif",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,7 +31,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className="min-h-svh dark antialiased">{children}</body>
+      <body
+        className={cn(
+          "min-h-svh antialiased",
+          hkGrotesk.variable,
+          instrumentSerif.variable,
+        )}
+      >
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
