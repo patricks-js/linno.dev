@@ -82,13 +82,13 @@ export function HeroSection() {
             </Tooltip>
           </TooltipProvider>
         </div>
-        <p className="text-lg">
-          <strong>Sou desenvolvedor de software</strong>. Gosto de construir
-          aplicações completas, do frontend ao backend, com foco em código
-          limpo, escalabilidade e boa experiência para quem usa. Trabalho
-          principalmente com TypeScript, usando React/Next.js no frontend e Bun
-          no backend, sempre buscando soluções que façam sentido técnico e
-          entregam valor ao negócio.
+        <p className="text-foreground/75">
+          <span className="text-foreground">Sou desenvolvedor de software</span>
+          . Gosto de construir aplicações completas, do frontend ao backend, com
+          foco em código limpo, escalabilidade e boa experiência para quem usa.
+          Trabalho principalmente com TypeScript, usando React/Next.js no
+          frontend e Bun no backend, sempre buscando soluções que façam sentido
+          técnico e entregam valor ao negócio.
         </p>
       </div>
     </section>
