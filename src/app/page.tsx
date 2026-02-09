@@ -3,6 +3,7 @@ import Link from "next/link";
 import { GitHubIcon } from "@/components/icons/github";
 import { LinkedInIcon } from "@/components/icons/linkedin";
 import { TwitterIcon } from "@/components/icons/twitter";
+import { Footer } from "@/components/layout/footer";
 import { StackSection } from "@/components/stack-section";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -14,7 +15,7 @@ export default function Home() {
         <div className="rounded-full size-28 bg-secondary" />
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="font-medium leading-relaxed font-serif text-4xl">
+            <h1 className="italic font-medium leading-relaxed font-serif text-4xl">
               Patrick Silva
             </h1>
             <p className="text-sm text-muted-foreground">
@@ -93,6 +94,7 @@ export default function Home() {
         </ul>
       </section>
       <StackSection />
+      <Footer />
     </main>
   );
 }

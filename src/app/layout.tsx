@@ -1,18 +1,17 @@
 import type { Metadata } from "next";
-import { Hanken_Grotesk, Instrument_Serif } from "next/font/google";
+import { DM_Sans, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 
-const hkGrotesk = Hanken_Grotesk({
-  weight: ["400"],
+const fontSans = DM_Sans({
   style: "normal",
   subsets: ["latin"],
-  variable: "--font-hk-grotesk",
+  variable: "--font-dm-sans",
   display: "swap",
 });
 
-const instrumentSerif = Instrument_Serif({
+const fontSerif = Instrument_Serif({
   weight: ["400"],
   style: "normal",
   subsets: ["latin"],
@@ -30,12 +29,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-svh antialiased",
-          hkGrotesk.variable,
-          instrumentSerif.variable,
+          "min-h-svh antialiased font-sans",
+          fontSans.variable,
+          fontSerif.variable,
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
