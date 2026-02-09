@@ -2,7 +2,9 @@ import { DiagonalPattern } from "@/components/diagonal-pattern";
 import { ExperienceSection } from "@/components/experience-section";
 import { HeroSection } from "@/components/hero-section";
 import { Footer } from "@/components/layout/footer";
+import { ProjectsSection } from "@/components/projects-section";
 import { StackSection } from "@/components/stack-section";
+import { ThoughtsSection } from "@/components/thoughts-section";
 
 export default function Home() {
   return (
@@ -12,6 +14,10 @@ export default function Home() {
       <ExperienceSection />
       <DiagonalPattern />
       <StackSection />
+      <DiagonalPattern />
+      <ProjectsSection />
+      <DiagonalPattern />
+      <ThoughtsSection />
       <DiagonalPattern />
       <Footer />
     </main>
