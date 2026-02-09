@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { DiagonalPattern } from "@/components/diagonal-pattern";
 import { Footer } from "@/components/layout/footer";
@@ -14,6 +15,25 @@ import {
 type ProjectPageProps = {
   params: Promise<{ slug: string }>;
 };
+
+export async function generateMetadata({
+  params,
+}: ProjectPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
+
+  if (!project) {
+    return {
+      title: "Project",
+      description: "Detalhes do projeto.",
+    };
+  }
+
+  return {
+    title: project.title,
+    description: project.summary,
+  };
+}
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params;

@@ -1,8 +1,14 @@
+import type { Metadata } from "next";
 import { DiagonalPattern } from "@/components/diagonal-pattern";
 import { Footer } from "@/components/layout/footer";
 import { ProjectsGrid } from "@/components/projects/projects-grid";
 import { ProjectsHeader } from "@/components/projects/projects-header";
 import { projects } from "@/data/projects";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description: "Uma vitrine com meus trabalhos e projetos paralelos.",
+};
 
 export default function ProjectsPage() {
   return (

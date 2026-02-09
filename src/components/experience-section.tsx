@@ -52,24 +52,29 @@ export function ExperienceSection() {
               <Collapsible>
                 <header className="flex items-center justify-between">
                   <div className="space-y-1">
-                    <h3 className="text-lg font-medium leading-relaxed">
+                    <h3 className="font-medium leading-relaxed">
                       {experience.company}
                     </h3>
-                    <p className="font-medium text-muted-foreground">
+                    <p className="text-sm font-medium text-muted-foreground">
                       {experience.role}
                     </p>
                   </div>
                   <div className="flex items-center gap-6">
-                    <p className="text-muted-foreground">{experience.period}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {experience.period}
+                    </p>
                     <TooltipProvider>
                       <CollapsibleTrigger
-                        className={buttonVariants({
-                          variant: "ghost",
-                          size: "icon",
-                        })}
+                        className={
+                          buttonVariants({
+                            variant: "ghost",
+                            size: "icon",
+                          }) +
+                          " transition-transform duration-200 data-[state=open]:[&_svg]:rotate-180"
+                        }
                         aria-label="Mostrar descrição do cargo"
                       >
-                        <ChevronDownIcon />
+                        <ChevronDownIcon className="transition-transform duration-200" />
                       </CollapsibleTrigger>
                     </TooltipProvider>
                   </div>

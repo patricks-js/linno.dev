@@ -2,6 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { MoonIcon, SunIcon } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
+import { useTheme } from "next-themes";
 import { GitHubIcon } from "@/components/icons/github";
 import { LinkedInIcon } from "@/components/icons/linkedin";
 import { TwitterIcon } from "@/components/icons/twitter";
@@ -38,6 +41,17 @@ const socialLinks = [
 
 export function HeroSection() {
   const tooltipHandle = TooltipCreateHandle<SocialTooltipPayload>();
+  const { resolvedTheme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const isDark = useMemo(() => {
+    if (!mounted) return false;
+    return resolvedTheme === "dark";
+  }, [mounted, resolvedTheme]);
 
   return (
     <section>
@@ -81,6 +95,21 @@ export function HeroSection() {
                   />
                 );
               })}
+              <TooltipTrigger
+                handle={tooltipHandle}
+                payload={{ label: "Trocar tema" }}
+                render={
+                  <Button
+                    onClick={() => setTheme(isDark ? "light" : "dark")}
+                    variant="outline"
+                    size="icon"
+                    className="rounded-full"
+                    aria-label="Trocar tema"
+                  >
+                    {isDark ? <SunIcon /> : <MoonIcon />}
+                  </Button>
+                }
+              />
             </div>
             <Tooltip handle={tooltipHandle}>
               {({ payload }) => (
