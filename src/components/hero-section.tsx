@@ -53,6 +53,18 @@ export function HeroSection() {
     return resolvedTheme === "dark";
   }, [mounted, resolvedTheme]);
 
+  const age = (() => {
+    const today = new Date();
+    const birthDate = new Date(2003, 7, 9);
+    let years = today.getFullYear() - birthDate.getFullYear();
+    const hadBirthday =
+      today.getMonth() > birthDate.getMonth() ||
+      (today.getMonth() === birthDate.getMonth() &&
+        today.getDate() >= birthDate.getDate());
+    if (!hadBirthday) years -= 1;
+    return years;
+  })();
+
   return (
     <section>
       <div className="space-y-6 px-6">
@@ -69,7 +81,7 @@ export function HeroSection() {
               Patrick Silva
             </h1>
             <p className="text-sm text-muted-foreground">
-              22 • brasileiro • desenvolvedor de software
+              {age} • brasileiro • desenvolvedor de software
             </p>
           </div>
           <TooltipProvider>

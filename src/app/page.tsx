@@ -8,7 +8,7 @@ import { ThoughtsSection } from "@/components/thoughts-section";
 
 export default function Home() {
   return (
-    <main className="max-w-4xl mx-auto pt-20 pb-10 border-x border-border/60 space-y-10">
+    <main className="max-w-4xl mx-auto pt-20 pb-10 border-x border-border/70 space-y-10">
       <HeroSection />
       <DiagonalPattern />
       <ProjectsSection />
